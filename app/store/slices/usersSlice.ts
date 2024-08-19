@@ -44,6 +44,9 @@ const usersSlice = createSlice({
         });
         builder.addCase(removeUser.fulfilled , (state , action) => {
             state.isLoading = false;
+            state.data = state.data.filter((user: any) => {
+                return user.id !== action.payload.id;
+            });
             
         });
         builder.addCase(removeUser.rejected , (state , action) => {
