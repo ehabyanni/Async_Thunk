@@ -33,7 +33,7 @@ export default function UsersList() {
     content = <div>Error fetching data...</div>
   } else {
     content = data?.map((user: any) => {
-      return <UsersListItem key={user.id} user={user} />
+      return <UsersListItem key={user?.id} user={user} />
     })
   }
 
